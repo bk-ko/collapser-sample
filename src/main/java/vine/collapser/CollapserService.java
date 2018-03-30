@@ -31,7 +31,7 @@ public class CollapserService {
     @HystrixCollapser(scope = GLOBAL,
                       batchMethod = "getProductByIds",
                       collapserProperties = {
-                          @HystrixProperty(name = "timerDelayInMilliseconds", value = "5000"), //default 10ms
+                          @HystrixProperty(name = "timerDelayInMilliseconds", value = "3000"), //default 10ms
                           @HystrixProperty(name = "maxRequestsInBatch", value = "10")
                       })
     public Product getProductById(Long id) {
