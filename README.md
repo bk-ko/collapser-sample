@@ -8,16 +8,17 @@ This Repository is a sample application using HystrixCollpaser and Spring Boot J
 - [Netflix wiki](https://github.com/Netflix/Hystrix/wiki/How-it-Works#RequestCollapsing)
 
 ### @HystrixCollapser
-```
-@HystrixCollapser(scope = GLOBAL,
-                      batchMethod = "getProductByIds",
-                      collapserProperties = {
-                          @HystrixProperty(name = "timerDelayInMilliseconds", value = "5000"), //default 10ms
-                          @HystrixProperty(name = "maxRequestsInBatch", value = "10")
-                      })
-    public Product getProductById(Long id) {
-        throw new RuntimeException("This method body should not be executed");
-    }
+```java
+@HystrixCollapser(
+  scope = GLOBAL,
+  batchMethod = "getProductByIds",
+  collapserProperties = {
+      @HystrixProperty(name = "timerDelayInMilliseconds", value = "5000"),
+      @HystrixProperty(name = "maxRequestsInBatch", value = "10")
+  })
+public Product getProductById(Long id) {
+    throw new RuntimeException("This method body should not be executed");
+}
 ```
 #### Scope
 - GLOBAL
