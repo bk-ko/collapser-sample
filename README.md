@@ -1,4 +1,4 @@
-#Hystrix Collapser Sample
+# Hystrix Collapser Sample
 
 This Repository is a sample application using HystrixCollpaser and Spring Boot JPA.
 
